@@ -1,0 +1,1072 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L'instant bar by Mélissa, barmaid évènementielle à Angers</title>
+<meta name="description" content="Barmaid évènementielle basée dans le Maine-et-Loire, je me déplace sur vos évènements et construis une carte de boissons à votre image : bar mobile botanique et vintage, cocktails et mocktails sur mesure."> <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+.icos{display:flex;gap:14px;flex-wrap:wrap}
+.ico{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;border:1px solid currentColor;color:inherit;text-decoration:none;transition:transform .15s}
+.ico:hover{transform:scale(1.08)}
+:root {
+  --bg: #f6f1e7;
+  --card: #ffffff;
+  --ink: #2b3a2f;
+  --muted: #6b7566;
+  --accent: #5b7a5a;
+  --accent-dark: #3f5a3e;
+  --line: #e2dccd;
+  --warn: #b5482f;
+  --sage: #593117;
+  --card-top: #f6f1e7;     /* haut du dégradé */
+  --card-bottom: #f6f1e7;  /* bas du dégradé */
+  --card-border: #faf5eb;
+  --title-bg: #f1e6d4;
+  --star: #c9a24a;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { max-width: 100%; overflow-x: hidden; }
+img, video, iframe { max-width: 100%; height: auto; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Inter', system-ui, sans-serif; line-height: 1.55; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 20px 16px 60px; display: flex; flex-direction: column; gap: 28px; }
+h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; margin: 0; line-height: 1.15; background: var(--title-bg); padding: 6px 14px; border-radius: 999px; width: fit-content; border: none; }
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
+h2 { font-size: 1.7rem; }
+h3 { font-size: 1.3rem; }
+p { margin: 0; }
+.hint { color: var(--muted); font-size: .92rem; }
+nav { display: flex; gap: 8px; flex-wrap: wrap; }
+nav a { text-decoration: none; color: var(--ink); padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: .9rem; background: var(--card); }
+nav a:hover { border-color: var(--accent); color: var(--accent-dark); }
+.hero { display: grid; grid-template-columns: 1fr; gap: 24px; align-items: center; }
+.hero:has(.portrait:not([hidden])) { grid-template-columns: 1.4fr 1fr; }
+@media (max-width: 760px) { .hero:has(.portrait:not([hidden])) { grid-template-columns: 1fr; } }
+.hero-text { display: flex; flex-direction: column; gap: 14px; }
+.eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; color: var(--accent); font-weight: 600; }
+.sprig { width: 90px; color: var(--accent); }
+.facts { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.facts li { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-size: .85rem; }
+.portrait { width: 100%; border-radius: 18px; object-fit: cover; max-height: 440px; }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.btn { display: inline-block; background: var(--accent); color: #fff; border: 1px solid var(--accent); padding: 11px 20px; border-radius: 999px; font: inherit; font-weight: 500; text-decoration: none; cursor: pointer; }
+.btn:hover { background: var(--accent-dark); }
+.btn.ghost { background: transparent; color: var(--accent-dark); }
+.btn.ghost:hover { background: var(--card); }
+section { display: flex; flex-direction: column; gap: 14px; }
+section {
+  background: #faf6ef;
+  border: 1px solid #e6dccb;
+  border-radius: 18px;
+  padding: 32px 28px;
+  margin: 38px auto;
+  box-shadow: 0 6px 20px rgba(60, 40, 20, 0.06);
+}
+section:nth-of-type(even) {
+  background: #faf6ef;
+}
+section h2 {
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  border-bottom: 2px;
+}
+
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+.cols { display: grid; grid-template-columns: 1fr 1.3fr; gap: 20px; align-items: stretch; }
+
+.agenda-col { display: flex; flex-direction: column; gap: 14px; }
+.agenda-image { width: 100%; flex: 1; min-height: 160px; max-height: 480px; object-fit: cover; border-radius: 18px; }
+@media (max-width: 860px) {
+  .cols { grid-template-columns: 1fr; }
+  .agenda-image { flex: none; height: 220px; }
+}
+.recipes { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; align-items: stretch; }
+
+.gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:16px; width:100%; }
+@media (max-width:600px){ .gallery{ grid-template-columns:repeat(2, 1fr); } }
+.gallery figure{ margin:0; padding:12px; text-align:center; }
+.gallery img{ display:block; width:80%; height:auto; aspect-ratio:4/5; object-fit:cover; margin:0 auto; border-radius:12px; }
+.gallery figcaption{ font-size:.82rem; color:var(--muted); margin-top:6px; text-align:center; }
+
+/* ===== CARTES RECETTES + ATELIERS : un seul style ===== */
+.recipe,
+.workshop,
+.workshop-card {
+  background: linear-gradient(180deg, var(--card-top) 0%, var(--card-bottom) 100%);
+  border: 2px solid var(--card-border);
+  border-left: 4px solid var(--card-border);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(60,70,50,.08), 0 10px 24px rgba(60,70,50,.10);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.recipe:hover,
+.workshop:hover,
+.workshop-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(60,70,50,.10), 0 16px 32px rgba(60,70,50,.14);
+}
+
+.recipe h3, .workshop h3 { margin: 0; }
+.recipe .hint, .workshop .hint { margin: 0; }
+.recipe summary, .workshop summary { cursor: pointer; font-weight: 600; }
+.recipe ul, .workshop ul { margin: 6px 0 0; padding-left: 20px; }
+.recipe .tag, .workshop .tag {
+  align-self: flex-start;
+  font-size: .75rem;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #f1e6d4;
+  color: var(--muted);
+}
+
+/* Spécifique atelier */
+.workshop h3 { font-size: 1.25rem; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.workshop .price { font-size: 1.5rem; font-weight: 700; color: var(--sage); }
+.workshop.featured { border: 2px solid var(--sage); transform: scale(1.03); }
+
+.workshops-heading { display:grid; grid-template-columns:minmax(220px,.85fr) 1.15fr; gap:24px; align-items:end; }
+@media (max-width:620px) { .workshops-heading { grid-template-columns:1fr; gap:8px; } }
+
+.workshop-card { padding: 0; }
+.workshop-card .workshop-image { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; }
+.workshop-card .workshop-copy {
+  padding: 24px;
+  gap: 14px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: transparent;
+}
+.workshop-card .workshop-price { color: var(--accent-dark); font-weight: 600; margin-top: auto; padding-top: 4px; }
+.workshop-card .btn { align-self: flex-start; margin-top: 4px; }
+
+.tag { text-transform: uppercase; letter-spacing: .12em; font-size: .7rem; color: var(--accent); font-weight: 600; }
+details summary { cursor: pointer; color: var(--accent-dark); font-weight: 500; }
+details ul, details ol { margin: 6px 0 0; padding-left: 20px; }
+
+/* Calendrier */
+.cal-head { display: flex; align-items: center; justify-content: space-between; text-transform: capitalize; }
+.nav { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: var(--card); font-size: 1.2rem; cursor: pointer; color: var(--ink); }
+.nav:disabled { opacity: .35; cursor: default; }
+.grid7 { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.dow { text-align: center; font-size: .8rem; font-weight: 600; color: var(--muted); padding: 4px 0; }
+.day { width: 100%; aspect-ratio: 1 / 1; padding: 0; display: flex; align-items: center; justify-content: center; border: 1px solid transparent; border-radius: 10px; background: #eef3ea; color: var(--ink); font: inherit; font-size: .9rem; cursor: pointer; }
+.day:hover:not(:disabled) { border-color: var(--accent); }
+.day.blank { background: transparent; border: 0; cursor: default; }
+.day.past { background: transparent; color: #bbb; cursor: default; }
+.day.booked { background: #f0dcd5; color: var(--warn); text-decoration: line-through; cursor: not-allowed; }
+.day.sel { background: var(--accent); color: #fff; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: .82rem; color: var(--muted); }
+.dot { display: inline-block; width: 11px; height: 11px; border-radius: 3px; background: #eef3ea; border: 1px solid var(--line); vertical-align: -1px; }
+.dot.b { background: #f0dcd5; }
+.dot.s { background: var(--accent); }
+
+.inclus { margin-top: 12px; }
+.inclus summary { cursor: pointer; font-weight: 600; color: var(--ink); list-style: none; display: flex; align-items: center; gap: 8px; }
+.inclus summary::-webkit-details-marker { display: none; }
+.inclus summary::after { content: "▾"; transition: transform .2s; }
+.inclus[open] summary::after { transform: rotate(180deg); }
+.inclus ul { margin: 10px 0 0; padding-left: 20px; }
+/* Formulaire */
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 520px) { .row2 { grid-template-columns: 1fr; } }
+.field { display: flex; flex-direction: column; gap: 6px; }
+label, .lbl { font-size: .85rem; font-weight: 500; }
+input, select, textarea { font: inherit; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink); width: 100%; }
+textarea { min-height: 190px; resize: vertical; }
+.opts { display: flex; flex-direction: column; gap: 8px; }
+.opt { display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: center; padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; cursor: pointer; background: #fff; }
+.opt input { width: auto; }
+.opt .t { font-weight: 500; }
+.opt .d { color: var(--muted); font-size: .82rem; }
+.opt .p { font-size: .85rem; color: var(--accent-dark); font-weight: 600; white-space: nowrap; }
+.result { display: flex; flex-direction: column; gap: 10px; }
+.lines { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.lines td { padding: 6px 0; border-bottom: 1px dashed var(--line); }
+.lines td:last-child { text-align: right; white-space: nowrap; }
+.total { display: flex; justify-content: space-between; font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; }
+.warn { background: #fbe9e4; color: var(--warn); padding: 10px 12px; border-radius: 10px; font-size: .9rem; }
+footer { color: var(--muted); font-size: .85rem; }
+[hidden] { display: none !important; }
+.opt { display: flex; align-items: center; gap: 12px; }
+.opt-img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+.recipe{
+  background:##f1e6d4; !important;
+}
+.opt-txt { flex: 1; min-width: 0; }
+.opt .p { margin-left: auto; white-space: nowrap; }
+.opt .option-qty {
+  width: 56px;
+  padding: 4px 6px;
+  font-size: .85rem;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 480px) {
+  .opt .option-qty { width: 48px; }
+  .opt-img { width: 52px; height: 52px; }
+}
+#sim-workshops .opt { flex-wrap: nowrap; }
+#sim-workshops .opt-txt { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#sim-workshops .opt .t { white-space: nowrap; }
+.workshop-includes { margin: 0; padding-left: 20px; }
+
+/* Avis clients */
+#avis { min-width: 0; max-width: 100%; }                                   /* ajouté */
+#avis .avis-carousel { position: relative; min-width: 0; max-width: 100%; } /* modifié */
+.avis-viewport { width: 100%; max-width: 100%; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; border-radius: 18px; } /* modifié */
+.avis-viewport::-webkit-scrollbar { display: none; }
+.avis-track { display: flex; gap: 0; }                                      /* gap: 0 */
+.avis-card { flex: 0 0 100%; width: 100%; max-width: 100%; min-width: 0; min-height: 210px; margin: 0; padding: clamp(18px, 4vw, 34px); display: flex; flex-direction: column; justify-content: space-between; gap: 22px; scroll-snap-align: start; scroll-snap-stop: always; background: var(--card); border: 1px solid var(--line); border-radius: 18px; } /* modifié */
+.avis-card blockquote { margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.1rem, 2.2vw, 1.55rem); line-height: 1.4; overflow-wrap: anywhere; } /* modifié */
+.avis-card figcaption { display: flex; align-items: center; justify-content: space-between; gap: 14px; color: var(--muted); font-size: .9rem; }
+.avis-identite { display: flex; flex-direction: column; min-width: 0; }     /* modifié */
+.avis-auteur { color: var(--ink); font-weight: 600; }
+.avis-date { font-size: .82rem; }
+.avis-stars { color: var(--star); letter-spacing: .12em; white-space: nowrap; }
+.avis-controls { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 14px; }
+.avis-arrow { width: 38px; height: 38px; flex: 0 0 auto; border: 1px solid var(--line); border-radius: 50%; background: var(--card); color: var(--ink); font: inherit; font-size: 1.25rem; cursor: pointer; }
+.avis-arrow:hover { border-color: var(--accent); color: var(--accent-dark); }
+.avis-dots { display: flex; align-items: center; justify-content: center; gap: 9px; }
+.avis-dot { width: 10px; height: 10px; padding: 0; border: 1px solid var(--accent); border-radius: 50%; background: transparent; cursor: pointer; }
+.avis-dot[aria-current="true"] { background: var(--accent); }
+.avis-lien { align-self: center; color: var(--muted); font-size: .86rem; text-underline-offset: 3px; }
+.avis-lien:hover { color: var(--accent-dark); }
+@media (max-width: 600px) { .avis-arrow { display: none; } }
+@media (prefers-reduced-motion: reduce) { .avis-viewport { scroll-behavior: auto; } }
+
+/* Séparateurs végétaux et mise en page des recettes */
+.recipe-layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 32px; align-items: start; }
+.recipe-main { min-width: 0; }
+.recipe-images { display: flex; flex-direction: column; gap: 14px; position: sticky; top: 90px; }
+.recipe-image { width: 100%; max-height: 220px; object-fit: cover; border-radius: 18px; }.section-divider { display: flex; justify-content: center; color: var(--accent); opacity: .6; }
+.section-divider svg { width: 100px; height: 24px; }
+.section-divider:has(+ #galerie[hidden]), .section-divider:has(+ #recettes[hidden]), .section-divider:has(+ #ateliers[hidden]) { display: none; }
+@media (max-width: 800px) {
+  .recipe-layout { grid-template-columns: 1fr; }
+  .recipe-images { order: -1; position: static; flex-direction: row; flex-wrap: wrap; }
+  .recipe-image { flex: 1 1 45%; max-height: 200px; }
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header style="display:flex; flex-direction:column; gap:18px;">
+    <nav aria-label="Navigation du site" id="menu"></nav>
+    <div class="hero">
+      <div class="hero-text">
+        <svg class="sprig" viewBox="0 0 120 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 20 C30 6 60 26 116 10"/>
+          <path d="M24 14 C22 6 28 3 32 5 C32 10 29 13 24 14Z" fill="currentColor" fill-opacity=".25"/>
+          <path d="M52 20 C50 12 56 9 60 11 C60 16 57 19 52 20Z" fill="currentColor" fill-opacity=".25"/>
+          <path d="M82 17 C80 9 86 6 90 8 C90 13 87 16 82 17Z" fill="currentColor" fill-opacity=".25"/>
+        </svg>
+        <div class="eyebrow" id="eyebrow"></div>
+        <h1 id="title"></h1>
+        <div id="intro" style="display:flex; flex-direction:column; gap:12px;"></div>
+        <ul class="facts" id="facts"></ul>
+        <div class="actions"><a class="btn" href="#devis">Simuler mon devis</a><a class="btn ghost" href="#dates">Voir mes dates</a></div>
+      </div>
+      <img class="portrait" id="portrait" alt="" hidden>
+    </div>
+  </header>
+
+
+
+  <div class="section-divider" aria-hidden="true"><svg viewBox="0 0 120 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 20 C30 6 60 26 116 10"/><path d="M24 14 C22 6 28 3 32 5 C32 10 29 13 24 14Z" fill="currentColor" fill-opacity=".25"/><path d="M52 20 C50 12 56 9 60 11 C60 16 57 19 52 20Z" fill="currentColor" fill-opacity=".25"/><path d="M82 17 C80 9 86 6 90 8 C90 13 87 16 82 17Z" fill="currentColor" fill-opacity=".25"/></svg></div>
+
+ <section id="recettes" hidden aria-labelledby="h-rec">
+  <div class="recipe-layout">
+    <div class="recipe-main">
+      <div><h2 id="h-rec">Quelques recettes</h2><p class="hint" id="rec-hint"></p></div>
+      <div class="recipes" id="recipes"></div>
+    </div>
+    <div class="recipe-images">
+      <img class="recipe-image" src="image/recette.jpg" alt="Mes créations de cocktails" loading="lazy">
+      <img class="recipe-image" src="image/recette2.jpg" alt="Cocktail botanique" loading="lazy">
+      <img class="recipe-image" src="image/recette3.jpg" alt="Cocktail et verrerie" loading="lazy">
+    </div>
+  </div>
+</section>
+
+  <div class="section-divider" aria-hidden="true"><svg viewBox="0 0 120 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 20 C30 6 60 26 116 10"/><path d="M24 14 C22 6 28 3 32 5 C32 10 29 13 24 14Z" fill="currentColor" fill-opacity=".25"/><path d="M52 20 C50 12 56 9 60 11 C60 16 57 19 52 20Z" fill="currentColor" fill-opacity=".25"/><path d="M82 17 C80 9 86 6 90 8 C90 13 87 16 82 17Z" fill="currentColor" fill-opacity=".25"/></svg></div>
+
+  <section id="ateliers" hidden aria-labelledby="h-ateliers">
+    <div class="workshops-heading">
+      <div><span class="eyebrow">À vivre ensemble</span><h2 id="h-ateliers">Les ateliers cocktails</h2></div>
+      <p class="hint" id="ateliers-vitrine-intro"></p>
+    </div>
+    <div class="recipes" id="workshop-cards"></div>
+  </section>
+
+ <div class="section-divider" aria-hidden="true"><svg viewBox="0 0 120 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 20 C30 6 60 26 116 10"/><path d="M24 14 C22 6 28 3 32 5 C32 10 29 13 24 14Z" fill="currentColor" fill-opacity=".25"/><path d="M52 20 C50 12 56 9 60 11 C60 16 57 19 52 20Z" fill="currentColor" fill-opacity=".25"/><path d="M82 17 C80 9 86 6 90 8 C90 13 87 16 82 17Z" fill="currentColor" fill-opacity=".25"/></svg></div>
+
+  <section id="galerie" hidden aria-labelledby="h-gal">
+    <div><h2 id="h-gal">Verrerie à la location</h2></div>
+    <div class="gallery" id="gallery"></div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"><svg viewBox="0 0 120 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 20 C30 6 60 26 116 10"/><path d="M24 14 C22 6 28 3 32 5 C32 10 29 13 24 14Z" fill="currentColor" fill-opacity=".25"/><path d="M52 20 C50 12 56 9 60 11 C60 16 57 19 52 20Z" fill="currentColor" fill-opacity=".25"/><path d="M82 17 C80 9 86 6 90 8 C90 13 87 16 82 17Z" fill="currentColor" fill-opacity=".25"/></svg></div>
+
+ <div class="cols">
+  <div class="agenda-col">
+    <section class="card" id="dates" aria-labelledby="h-dates">
+      <div>
+        <h2 id="h-dates">Mes disponibilités</h2>
+        <p class="hint">Touchez une date libre pour l'utiliser dans votre estimation.</p>
+      </div>
+      <div id="cal"></div>
+      <div class="legend">
+        <span><i class="dot"></i> Disponible</span>
+        <span><i class="dot b"></i> Déjà réservée</span>
+        <span><i class="dot s"></i> Votre date</span>
+      </div>
+    </section>
+
+    <img class="agenda-image" src="image/agenda.jpg" alt="Un service avec le sourire" loading="lazy">
+  </div>
+
+    <section class="card" id="devis" aria-labelledby="h-sim">
+      <div>
+        <h2 id="h-sim">Simuler mon devis</h2>
+        <p class="hint">Une estimation indicative en quelques secondes. Le devis définitif se construit après un échange.</p>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="f-type">Type d'événement</label>
+          <select id="f-type"></select>
+        </div>
+        <div class="field">
+          <label for="f-guests">Nombre d'invités</label>
+          <input id="f-guests" type="number" min="1" max="400" step="1" value="60" inputmode="numeric">
+        </div>
+        <div class="field">
+          <label for="f-hours">Durée du service (heures)</label>
+          <input id="f-hours" type="number" min="1" max="14" step="0.5" value="4" inputmode="decimal">
+        </div>
+        <div class="field">
+          <label for="f-km" id="l-km">Distance (km)</label>
+          <input id="f-km" type="number" min="0" max="500" step="1" value="15" inputmode="numeric">
+        </div>
+      </div>
+      <div class="field">
+        <span class="lbl">Choisissez votre mode de devis</span>
+        <div class="actions" role="group" aria-label="Mode de devis">
+          <button class="btn" id="mode-formule" type="button" aria-pressed="true">Formule prête à l'emploi</button>
+          <button class="btn ghost" id="mode-carte" type="button" aria-pressed="false">À la carte</button>
+        </div>
+      </div>
+      <section id="packs-section" aria-label="Formules prêtes à l'emploi">
+        <div class="recipes" id="packs"></div>
+      </section>
+      <div class="field" id="pack-summary" hidden aria-live="polite"></div>
+      <div class="field" id="options-section" hidden>
+        <span class="lbl">Options à la carte</span>
+        <div class="opts" id="sim-options"></div>
+      </div>
+      <div class="field workshop-options" id="workshops-options-section">
+        <span class="lbl">Ateliers (option supplémentaire, quel que soit le mode de devis)</span>
+        <p class="hint" id="workshops-intro"></p>
+        <div class="opts" id="sim-workshops"></div>
+      </div>
+      <div class="result" id="sim-result" aria-live="polite"></div>
+    </section>
+  </div>
+
+  <div class="section-divider" aria-hidden="true"><svg viewBox="0 0 120 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 20 C30 6 60 26 116 10"/><path d="M24 14 C22 6 28 3 32 5 C32 10 29 13 24 14Z" fill="currentColor" fill-opacity=".25"/><path d="M52 20 C50 12 56 9 60 11 C60 16 57 19 52 20Z" fill="currentColor" fill-opacity=".25"/><path d="M82 17 C80 9 86 6 90 8 C90 13 87 16 82 17Z" fill="currentColor" fill-opacity=".25"/></svg></div>
+
+  <section class="card" id="contact" aria-labelledby="h-send">
+    <div>
+      <h2 id="h-send">Me contacter avec mon estimation</h2>
+      <p class="hint">Copiez le récapitulatif ci-dessous et envoyez-le moi, je reviens vers vous pour préciser vos envies.</p>
+    </div>
+    <div id="contact-box" style="display:flex; flex-direction:column; gap:4px;"></div>
+    <textarea id="recap" readonly aria-label="Récapitulatif de votre demande"></textarea>
+    <div class="actions">
+      <button class="btn" id="copy" type="button">Copier le récapitulatif</button>
+      <a id="wa-devis" class="btn" href="#" target="_blank" rel="noopener">Envoyer sur WhatsApp</a>
+      <a class="btn ghost" id="mailto" href="#" hidden>Ouvrir dans mon e-mail</a>
+      <span class="hint" id="copy-status" role="status"></span>
+    </div>
+  </section>
+
+ <section id="avis" hidden aria-labelledby="h-avis">
+    <div><h2 id="h-avis">Avis clients</h2><p class="hint" id="avis-hint"></p></div>
+    <div class="avis-carousel" id="avis-carousel">
+      <div class="avis-viewport" id="avis-viewport" aria-label="Avis clients, faites défiler pour lire les témoignages">
+        <div class="avis-track" id="avis-track"></div>
+      </div>
+      <div class="avis-controls">
+        <button class="avis-arrow" id="avis-prev" type="button" aria-label="Afficher l’avis précédent">&#8249;</button>
+        <div class="avis-dots" id="avis-dots" role="group" aria-label="Choisir un avis"></div>
+        <button class="avis-arrow" id="avis-next" type="button" aria-label="Afficher l’avis suivant">&#8250;</button>
+      </div>
+    </div>
+    <a class="avis-lien" href="https://www.mariages.net/food-truck/l-instant-bar-by-melissa--e411963/avis" target="_blank" rel="noopener">Voir tous les avis sur Mariages.net</a>
+  </section>
+
+  <footer id="footer"></footer>
+</div>
+
+<script>
+/* =====================================================================
+   SITE : le seul bloc à modifier.
+   - Les textes sont entre guillemets "..." : change ce qui est à l'intérieur.
+   - Les prix sont des nombres, sans guillemets (le point sert de virgule : 0.8).
+   - Garde les virgules à la fin de chaque ligne et les crochets [ ].
+   ===================================================================== */
+var SITE = {
+  eyebrow: "Barmaid événementielle",
+  titre: "Un bar mobile botanique et vintage pour vos événements",
+  introduction: [
+  "Chez moi, un cocktail n'est jamais qu'une boisson : c'est un moment à partager. J'ai imaginé mon bar comme une parenthèse chaleureuse, où chaque invité, petit ou grand, trouve sa place autour d'un verre qui lui ressemble.",
+
+  "Mon univers est botanique et vintage : une verrerie choisie avec amour, des accessoires éco-responsables, une décoration douce et naturelle. Mon bar mobile s'installe chez vous, dans votre salle, votre jardin ou votre domaine, et apporte avec lui une ambiance conviviale, élégante et pleine de charme.",
+
+  "Mariage, anniversaire, baptême, soirée d'entreprise ou simple envie de réunir ceux que vous aimez : je compose avec vous une carte sur mesure, à partir de vos goûts, de vos couleurs et de vos envies. Vous avez déjà une idée en tête ? Je la mets en bouteille. Vous cherchez l'inspiration ? Je vous propose mes créations.",
+
+  "Mon souhait est simple : que vos invités repartent avec des souvenirs plein les yeux, et le sourire de ceux qui ont trinqué ensemble, sans compromis sur le plaisir ni sur la qualité.",
+
+      ],
+  points: [
+    "Formation de bartender, axe mixologie",
+    "Sirops et garnitures faits maison",
+    "Bar mobile décoré à la location",
+    "Ateliers cocktails conviviaux pour apprendre, goûter et s'amuser"
+  ],
+
+  /* Photo de toi (facultatif) : mets le fichier dans le dossier images, ou laisse vide. */
+  portrait: { fichier: "image/portrait.jpg", description: "" },
+
+ /* ----- Photos de verrerie et de cocktails -----
+   Ajoute une ligne par photo, après avoir mis le fichier dans le dossier « images ». */
+photos: [
+  
+  { fichier: "image/old-fashion.png", description: "Verres old fashioned au relief baroque, mes verres signature" },
+  { fichier: "image/tumbler.png", description: "Tumblers au style vintage, pour les cocktails plus longs" },
+  { fichier: "image/verre-martini.jpg", description: "Coupes à martini, pour les cocktails servis « up »" },
+  { fichier: "image/shooter.jpg", description: "Verres à shoot, pour égayer vos fin de soirée et célèbrer votre évenement comme il se doit" }
+],
+
+ateliers_intro: "Des ateliers conviviaux pour apprendre, goûter et s'amuser autour du shaker !",
+ateliers: [
+  {
+    id: "atelier-decouverte",
+    nom: "Formule Découverte",
+    sousTitre: "L'Essentiel du Cocktail",
+    description: "Un premier pas dans l'univers du shaker. On découvre les bons gestes, on compose ensemble et l'on savoure ses créations, avec ou sans alcool.",
+    prixForfait: 35,
+    accroche: "Parfaite pour s'initier aux techniques de base des cocktails.",
+    inclus: [
+      "Présentation du matériel de bar & astuces de pros",
+      "Réalisation guidée de 2/3 cocktails (avec ou sans alcool)",
+      "Dégustation conviviale de chaque création",
+      "Conseils sur les associations de saveurs et la conservation",
+      "Échange interactif autour des techniques de bar",
+      "Fiche recette pour chaque participant"
+    ]
+  },
+  {
+    id: "atelier-creatif",
+    nom: "Formule Créative",
+    sousTitre: "Cocktails & Sirops Maison",
+    description: "Un atelier créatif autour des beaux accords et des ingrédients de saison : imaginez vos cocktails, préparez un sirop artisanal aux herbes, épices ou fruits, puis repartez avec votre flacon maison.",
+    prixForfait: 50, 
+    prixPersonne: 5,
+    accroche: "Apprenez aussi à préparer votre propre sirop artisanal.",
+    inclus: [
+      "Atelier cocktail : 2/3 recettes originales à réaliser et déguster",
+      "Création d'un sirop maison personnalisé (herbes, épices ou fruits)",
+      "Un petit flacon de sirop maison à emporter en souvenir"
+    ]
+  },
+  {
+    id: "atelier-experience",
+    nom: "Formule Expérience",
+    sousTitre: "Jeu, Goût & Défi",
+    description: "Une expérience à partager entre curiosité et bonne humeur : dégustation à l'aveugle, mini-quiz et défi final rythment ce moment ludique, ponctué de recettes et de petites surprises.",
+    prixForfait: 60, 
+    accroche: "Dégustation, challenge et convivialité.",
+    inclus: [
+      "Atelier cocktail créatif : 2/3 recettes originales à réaliser et déguster",
+      "Blind test de liqueurs ou sirops à l'aveugle",
+      "Mini-quizz sur l'univers du bar et des cocktails",
+      "Animation finale avec un petit cadeau pour le ou la meilleure mixologue du jour",
+      "Fiches recettes et surprises pour les participants"
+    ]
+  }
+],
+  
+  recettes_intro: "Voici quelques inspirations de ma carte botanique, à picorer comme on feuillette un carnet de recettes. Rien n'est figé : elle évolue au fil des saisons et de vos envies. Chaque création peut se décliner, un cocktail avec alcool peut devenir un mocktail, et inversement, pour que chacun de vos invités trouve son bonheur pendant l'événement. Je peux vous proposer d'autres recettes sur demande.",
+  recettes_titres: {
+    alcool: "Avec alcool",
+    sans: "Sans alcool"
+  },
+ 
+  recettes: [
+    {
+      type: "alcool",
+      nom: "London Mule Jasmin",
+      accroche: "Un mule floral et frais, signé gin et jasmin.",
+      ingredients: [
+        "Gin Flower Powder (La Florenciere)",
+        "Sirop de jasmin Giffard",
+        "Citron vert frais",
+        "Ginger beer"
+      ]
+    },
+    {
+      type: "alcool",
+      nom: "Dulcis",
+      accroche: "Pomme, cidre et caramel beurre salé, un cocktail gourmand aux accents bretons.",
+      ingredients: [
+        "Calvados",
+        "Cidre brut breton",
+        "Sirop caramel beurre salé maison",
+        "Jus de pomme frais pressé",
+        "Jus de citron"
+      ]
+    },
+    {
+      type: "sans",
+      nom: "Première Pousse",
+      accroche: "Un mocktail végétal, doux et acidulé, autour de la carotte fraîche.",
+      ingredients: [
+        "Jus de carotte frais",
+        "Sirop de thym maison",
+        "Jus de pomme",
+        "Jus de citron jaune"
+      ]
+    },
+    {
+      type: "sans",
+      nom: "Solara",
+      accroche: "Un mocktail solaire et vif, entre tamarin, hibiscus et basilic.",
+      ingredients: [
+        "Sirop de tamarin maison",
+        "Jus de pamplemousse",
+        "Sirop d'hibiscus maison",
+        "Basilic frais",
+        "Tonic"
+      ]
+    }
+  ],
+
+  avis_intro: "Ce que disent mes clients.",
+  avis: [
+ {
+      auteur: "Audrey P.",
+      date: "octobre 2026",
+      note: 5,
+      texte: "Prestation au top, du début à la fin. Mélissa a été de très bon conseil pour préparer l’événement, et une fois la soirée démarrée elle a géré seule les 70 invités. Tout le monde a apprécié l’ensemble des cocktails ! Je recommande ++"
+    },
+
+    {
+      auteur: "Floriane T.",
+      date: "mars 2026",
+      note: 5,
+      texte: "Merci à Mélissa pour cette belle prestation! Le service était au top, les explications pour l'atelier cocktails parfaites. Tout le monde a adoré. Mélissa est d'une gentillesse incroyable, souriante et à l'écoute de nos besoins. A très bientôt!!"
+    },
+    {
+      auteur: "Laurent D.",
+      date: "juillet 2025",
+      note: 5,
+      texte: "Une prestation exceptionnelle grâce à Mélissa pour notre événement. Tout était parfait de la prise de contact jusqu’à la fin de la prestation. Les invités étaient ravis, les cocktails délicieux, soignés, et le tout avec bonne humeur et sérieux."
+    },
+{
+      auteur: "Alison A.",
+      date: "avril 2025",
+      note: 5,
+      texte: "Parfait !!! Merci Mélissa pour ton sourire , ta bienveillance et ta sympathie. Nous avons eux de délicieux cocktails sans alcool , un anniversaire surprise encore plus que TOP ou petits et grands ont apprécier. Aux plaisirs de te revoir"
+    },
+
+    {
+      auteur: "Audrey S.",
+      date: "novembre 2024",
+      note: 5,
+      texte: "Super prestation, à l’heure vraiment professionnelle! Nous étions une soixantaine Mélissa a fait l’unanimité! Nous referons appelle à elle les yeux fermés! Melissa merci à toi tu as grandement contribué à la réussite de ma soirée."
+    }
+  ],
+
+  contact: { email: "melissapoitevinpro@gmail.com", telephone: "+33678430130", instagram: "@instantbarby_melissa" },
+
+  /* Dates déjà réservées, une par ligne, au format "AAAA-MM-JJ". Exemple : "2027-06-12", */
+  datesReservees: [
+ "2027-08-21" ,
+ "2027-10-30" ,
+ "2027-07-31" ,
+ "2027-07-03" ,
+ "2027-06-19" ,
+ "2027-06-12" ,
+ "2027-06-05" ,
+ "2027-05-16" ,
+ "2027-05-15" ,
+ "2027-07-03" ,
+ "2026-12-05" ,
+ "2027-01-23" ,
+ "2027-01-24" ,
+ "2027-03-27" ,
+ "2027-03-26" ,
+ "2027-03-28" ,
+ "2027-04-24" ,
+ "2027-04-25" ,
+ "2027-07-16" ,
+ "2027-07-17" ,
+ "2027-07-18"
+  ],
+
+  villeDepart: "Angers",
+ tarifs: {
+    prixHeure: 40,
+    heuresMinimum: 2,
+    heuresMiseEnPlace: 1,   // mise en place + désinstallation (en heures)
+    invitesAvantSeconde: 79,
+    prixHeureSeconde: 40,
+    kmInclus: 10,
+    prixKm: 0.7
+  },
+
+  types: ["Mariage", "Anniversaire", "EVJF / EVG", "Événement d'entreprise", "Autre"],
+
+  /* Options. type :
+     "forfait" = prix fixe
+     "invite"  = prix x nombre d'invités (calcul automatique)
+     "glacons" = prix par kg, avec "kgParInvite" kg par invité (calcul automatique)
+     Les valeurs marquées À CONFIRMER sont provisoires : remplace-les par tes vrais prix. */
+
+  options: [
+    { id: "verre", label: "Verrerie",image:"image/old-fashion.png", desc: "Livraison, mise en place, gestion et nettoyage inclus.", type: "invite", prix: 2.1 },  
+    { id: "glac",  label: "Glaçons", image: "image/glacons.jpg", desc: "Claçons ou glace pilée indispensable à la réalisation des cocktails", type: "glacons", prix: 2.5, invitesParTranche: 10, kgParTranche: 2 }, 
+    { id: "bar",   label: "Bar mobile",image: "image/bar.jpeg", desc: "Le bar installé et décoré sur votre lieu",               type: "forfait", prix: 60 },
+    { id: "drink",   label: "Jar de rafraîchissement  maison",image: "image/fontaine.jpg",             desc: "Citronnade, Thé glacé ou Eau aromatisée maison", type: "invite", prix: 1.25 },
+    { id: "market",   label: "Courses",image: "image/courses.jpg",             desc: "Je m'occupe de réaliser les achats des boissons pour vous, en fonction des cocktails choisis, je vous fournirais une estimation du montant des courses", type: "forfait", prix: 30 },
+    { id: "deco",  label: "Fleurs séchées & Pailles", image: "image/fleur.jpg",       desc: "Fleurs séchées comestible, pailles en verres ou en bambous",           type: "forfait", prix: 12 },
+    { id: "smoke", label: "Bulles de fumée",image: "image/buble.jpg",                 desc: "Cocktails servis sous un dôme de fumée aromatique, effet spectaculaire garanti ", type: "bulles", prix: 20, invitesInclus: 40, prixTranche: 5, invitesParTranche: 10 },
+    { id: "garn",  label: "Fruits séchés en décoration", image: "image/fruits-sechees.jpg",       desc: "Agrumes, fruits ou légumes séchés préparés à l'avance",           type: "invite",  prix: 0.5 },
+  
+    { id: "sirop", label: "Sirop maison",image: "image/sirop.jpg", desc: "Sirop préparé maison, adapté aux recettes choisis", type: "litres", prix: 6, litresParInvite: 1 / 30 },
+   
+  ],
+
+  packs: [
+    { id: "essentiel", nom: "Essentiel", description: "Les indispensables pour un service minimaliste & réussi", options: ["glac", "deco"] },
+    { id: "confort", nom: "Confort", description: "La verrerie et le bar mobile pour une expérience complète.", options: ["glac", "verre", "deco", "bar", "market"] },
+    { id: "prestige", nom: "Prestige", description: "Une expérience signature, fraîche et spectaculaire.", options: ["glac", "verre", "garn", "bar", "market", "smoke", "sirop", "drink"] }
+  ],
+
+  piedDePage: "Les montants sont des estimations hors boissons. Je vous remets une liste de courses pour que vous choisissiez vos boissons selon vos goûts et votre budget."
+};
+</script>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var S = SITE, T = S.tarifs;
+  var view = new Date(); view.setDate(1); view.setHours(0, 0, 0, 0);
+  var minMonth = new Date(view.getTime());
+  var today = new Date(); today.setHours(0, 0, 0, 0);
+  var selected = null, checked = {};
+  var eur = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', minimumFractionDigits: 0, maximumFractionDigits: 2 });
+  var eur2 = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', minimumFractionDigits: 2 });
+
+  function iso(d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
+  function frDate(s) { var p = s.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function num(id, def) { var v = parseFloat(String($(id).value).replace(',', '.')); return isFinite(v) ? v : def; }
+  function isBlocked(key) { return S.datesReservees.indexOf(key) !== -1; }
+
+  /* ---------- Présentation ---------- */
+  $('eyebrow').textContent = S.eyebrow;
+  $('title').textContent = S.titre;
+  $('intro').innerHTML = S.introduction.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('');
+  $('facts').innerHTML = S.points.map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('');
+  if (S.portrait && S.portrait.fichier) { var pt = $('portrait'); pt.src = S.portrait.fichier; pt.alt = S.portrait.description || ''; pt.hidden = false; }
+
+  if (S.photos.length) {
+    $('galerie').hidden = false;
+    $('gallery').innerHTML = S.photos.map(function (p) {
+      return '<figure><img src="' + esc(p.fichier) + '" alt="' + esc(p.description || '') + '" loading="lazy">' + (p.description ? '<figcaption>' + esc(p.description) + '</figcaption>' : '') + '</figure>';
+    }).join('');
+  }
+
+   if (Array.isArray(S.ateliers) && S.ateliers.length) {
+    $('ateliers').hidden = false;
+    $('ateliers-vitrine-intro').textContent = S.ateliers_intro || 'Des ateliers conviviaux autour du shaker !';
+    $('workshop-cards').innerHTML = S.ateliers.map(function (atelier) {
+      var image = atelier.image ? '<img class="workshop-image" src="' + esc(atelier.image) + '" alt="' + esc(atelier.nom) + '" loading="lazy">' : '';
+      var description = atelier.description || '';
+      var accroche = atelier.accroche || '';
+      var inclus = Array.isArray(atelier.inclus) && atelier.inclus.length
+  ? '<details class="inclus"><summary>Ce qui est inclus</summary><ul class="workshop-includes">' + atelier.inclus.map(function (item) { return '<li>' + esc(item) + '</li>'; }).join('') + '</ul></details>' : '';
+      var prixPersonne = Number(atelier.prixPersonne) || 0;
+      var prixAffiche = eur.format(Number(atelier.prixForfait) || 0) + (prixPersonne > 0 ? ' + ' + eur.format(prixPersonne) + '/pers.' : ' forfait global');
+      return '<article class="recipe workshop-card featured">' + image + '<div class="workshop-copy"><div class="tag">Atelier cocktail</div><h3>' + esc(atelier.nom) + '</h3>' + (atelier.sousTitre ? '<p class="hint">' + esc(atelier.sousTitre) + '</p>' : '') + (accroche ? '<p class="hint">' + esc(accroche) + '</p>' : '') + (description ? '<p>' + esc(description) + '</p>' : '') + inclus + '<p class="workshop-price">' + prixAffiche + (prixPersonne > 0 ? '' : ' <span class="hint">· prix à confirmer</span>') + '</p><button type="button" class="btn workshop-add" data-workshop-add="' + esc(atelier.id) + '">Ajouter à mon devis</button></div></article>';
+    }).join('');
+    Array.prototype.forEach.call($('workshop-cards').querySelectorAll('[data-workshop-add]'), function (button) {
+      button.onclick = function () {
+        var id = button.getAttribute('data-workshop-add');
+        checkedWorkshops[id] = true;
+        var checkbox = $('sim-workshops').querySelector('input[data-atelier="' + id.replace(/"/g, '\\"') + '"]');
+        if (checkbox) checkbox.checked = true;
+        calc();
+        var simulator = $('devis');
+        if (simulator && simulator.scrollIntoView) simulator.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      };
+    });
+  }
+
+  if (S.recettes.length) {
+    $('recettes').hidden = false;
+    $('rec-hint').textContent = S.recettes_intro || '';
+
+    function carteRecette(r) {
+      var h = '<article class="recipe"><div class="tag">' + (r.type === 'sans' ? 'Sans alcool' : 'Avec alcool') + '</div><h3>' + esc(r.nom) + '</h3>';
+      if (r.accroche) h += '<p class="hint">' + esc(r.accroche) + '</p>';
+      if (r.ingredients && r.ingredients.length) {
+        h += '<details><summary>Voir la recette</summary><div style="display:flex;flex-direction:column;gap:10px;margin-top:10px"><strong>Ingrédients</strong><ul>' + r.ingredients.map(function (i) { return '<li>' + esc(i) + '</li>'; }).join('') + '</ul>';
+        if (r.etapes && r.etapes.length) h += '<strong>Préparation</strong><ol>' + r.etapes.map(function (e) { return '<li>' + esc(e) + '</li>'; }).join('') + '</ol>';
+        h += '</div></details>';
+      }
+      return h + '</article>';
+    }
+
+    var titres = S.recettes_titres || {};
+    var notes = S.recettes_notes || {};
+    var groupes = [
+      { cle: 'alcool', titre: titres.alcool || 'Avec alcool', note: notes.alcool || '' },
+      { cle: 'sans', titre: titres.sans || 'Sans alcool', note: notes.sans || '' }
+    ];
+
+    $('recipes').innerHTML = groupes.map(function (g) {
+      var liste = S.recettes.filter(function (r) { return (r.type === 'sans' ? 'sans' : 'alcool') === g.cle; });
+      if (!liste.length) return '';
+      return '<div class="recipe-group" style="grid-column:1/-1">' +
+        '<h3 class="recipe-group-title">' + esc(g.titre) + '</h3>' +
+        (g.note ? '<p class="hint">' + esc(g.note) + '</p>' : '') +
+        '</div>' +
+        liste.map(carteRecette).join('');
+    }).join('');
+  }
+
+  if (S.avis && S.avis.length) {
+    $('avis').hidden = false;
+    $('avis-hint').textContent = S.avis_intro || '';
+    $('avis-track').innerHTML = S.avis.map(function (a) {
+      var note = Math.max(0, Math.min(5, Number(a.note) || 0));
+      return '<figure class="avis-card"><div class="avis-stars" role="img" aria-label="Note : ' + note + ' sur 5">' + '★'.repeat(note) + '☆'.repeat(5 - note) + '</div><blockquote>“' + esc(a.texte) + '”</blockquote><figcaption><span class="avis-identite"><span class="avis-auteur">' + esc(a.auteur) + '</span><span class="avis-date">' + esc(a.date || '') + '</span></span></figcaption></figure>';
+    }).join('');
+    var avisViewport = $('avis-viewport'), avisDots = $('avis-dots'), avisIndex = 0, avisTimer;
+    avisDots.innerHTML = S.avis.map(function (_, i) {
+      return '<button class="avis-dot" type="button" aria-label="Afficher l’avis ' + (i + 1) + ' sur ' + S.avis.length + '" aria-current="' + (i === 0 ? 'true' : 'false') + '" data-avis-index="' + i + '"></button>';
+    }).join('');
+    function selectAvis(index, smooth) {
+      avisIndex = (index + S.avis.length) % S.avis.length;
+      avisViewport.scrollTo({ left: avisIndex * avisViewport.clientWidth, behavior: smooth ? 'smooth' : 'auto' });
+      Array.prototype.forEach.call(avisDots.children, function (dot, i) {
+        dot.setAttribute('aria-current', i === avisIndex ? 'true' : 'false');
+      });
+    }
+    $('avis-prev').onclick = function () { selectAvis(avisIndex - 1, true); };
+    $('avis-next').onclick = function () { selectAvis(avisIndex + 1, true); };
+    Array.prototype.forEach.call(avisDots.children, function (dot) {
+      dot.onclick = function () { selectAvis(Number(dot.getAttribute('data-avis-index')), true); };
+    });
+    avisViewport.addEventListener('scroll', function () {
+      var i = Math.round(avisViewport.scrollLeft / avisViewport.clientWidth);
+      if (i >= 0 && i < S.avis.length && i !== avisIndex) {
+        avisIndex = i;
+        Array.prototype.forEach.call(avisDots.children, function (dot, j) {
+          dot.setAttribute('aria-current', j === avisIndex ? 'true' : 'false');
+        });
+      }
+    }, { passive: true });
+    function startAvisTimer() {
+      if (avisTimer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      avisTimer = window.setInterval(function () { selectAvis(avisIndex + 1, true); }, 5000);
+    }
+    function stopAvisTimer() { window.clearInterval(avisTimer); avisTimer = null; }
+    var avisCarousel = $('avis-carousel');
+    avisCarousel.addEventListener('mouseenter', stopAvisTimer);
+    avisCarousel.addEventListener('mouseleave', startAvisTimer);
+    avisCarousel.addEventListener('focusin', stopAvisTimer);
+    avisCarousel.addEventListener('focusout', function (e) {
+      if (!avisCarousel.contains(e.relatedTarget)) startAvisTimer();
+    });
+    avisCarousel.addEventListener('touchstart', stopAvisTimer, { passive: true });
+    avisCarousel.addEventListener('touchend', function () { window.setTimeout(startAvisTimer, 2500); }, { passive: true });
+    startAvisTimer();
+  }
+
+var links = [];
+  if (S.recettes.length) links.push(['#recettes', 'Recettes']);
+  if (S.ateliers && S.ateliers.length) links.push(['#ateliers', 'Ateliers']);
+  if (S.photos.length) links.push(['#galerie', 'Verrerie']);
+links.push(['#dates', 'Disponibilités'], ['#devis', 'Devis'], ['#contact', 'Contact']); if (S.avis && S.avis.length) links.push(['#avis', 'Avis']);
+  $('menu').innerHTML = links.map(function (l) { return '<a href="' + l[0] + '">' + l[1] + '</a>'; }).join('');
+
+  /* ---------- Calendrier ---------- */
+  function renderCal() {
+    var y = view.getFullYear(), m = view.getMonth();
+    var label = view.toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' });
+    var maxMonth = new Date(minMonth.getFullYear(), minMonth.getMonth() + 18, 1);
+    var html = '<div class="cal-head"><button class="nav" id="prev" type="button" aria-label="Mois précédent"' + (view <= minMonth ? ' disabled' : '') + '>&#8249;</button><strong>' + esc(label) + '</strong><button class="nav" id="next" type="button" aria-label="Mois suivant"' + (view >= maxMonth ? ' disabled' : '') + '>&#8250;</button></div>';
+    html += '<div class="grid7" style="margin-top:12px">';
+    ['L', 'M', 'M', 'J', 'V', 'S', 'D'].forEach(function (d) { html += '<div class="dow" aria-hidden="true">' + d + '</div>'; });
+    var offset = (new Date(y, m, 1).getDay() + 6) % 7;
+    for (var i = 0; i < offset; i++) html += '<div class="day blank"></div>';
+    var nb = new Date(y, m + 1, 0).getDate();
+    for (var d = 1; d <= nb; d++) {
+      var date = new Date(y, m, d), key = iso(date);
+      var past = date < today, blk = isBlocked(key);
+      var cls = 'day', dis = '';
+      if (past) { cls += ' past'; dis = ' disabled'; }
+      else if (blk) { cls += ' booked'; dis = ' disabled'; }
+      if (key === selected) cls += ' sel';
+      html += '<button type="button" class="' + cls + '" data-d="' + key + '"' + dis + ' aria-label="' + esc(frDate(key) + (blk ? ', déjà réservée' : '')) + '">' + d + '</button>';
+    }
+    $('cal').innerHTML = html + '</div>';
+    var p = $('prev'), n = $('next');
+    if (p) p.onclick = function () { view = new Date(y, m - 1, 1); renderCal(); };
+    if (n) n.onclick = function () { view = new Date(y, m + 1, 1); renderCal(); };
+    Array.prototype.forEach.call($('cal').querySelectorAll('.day[data-d]'), function (b) {
+      b.onclick = function () { selected = b.getAttribute('data-d'); renderCal(); calc(); };
+    });
+  }
+
+  /* ---------- Options et formules ---------- */
+  var mode = 'formule', selectedPack = null, syrupOverride = null, checkedWorkshops = {};
+  function priceLabel(o) {
+    if (o.type === 'invite') return '+' + eur2.format(o.prix) + ' / invité';
+    if (o.type === 'glacons') return '+' + eur2.format(o.prix) + ' / kg';
+    if (o.type === 'litres') return '+' + eur2.format(o.prix) + ' / litre';
+    if (o.type === 'bulles') return '+' + eur.format(o.prix) + ' jusqu\u2019à ' + o.invitesInclus + ' invités';
+    return '+' + eur.format(o.prix);
+  }
+  function optionCost(o, guests) {
+    if (o.type === 'invite') return o.prix * guests;
+    if (o.type === 'glacons') return o.prix * Math.ceil(guests / (o.invitesParTranche || 10)) * (o.kgParTranche || 2);
+    if (o.type === 'bulles') return o.prix + Math.ceil(Math.max(0, guests - o.invitesInclus) / o.invitesParTranche) * o.prixTranche;
+    if (o.type === 'litres') return o.prix * (syrupOverride === null ? Math.ceil(guests * o.litresParInvite) : syrupOverride);
+    return o.prix;
+  }
+  function optionQuantity(o, guests) {
+    if (o.type === 'glacons') return Math.ceil(guests / (o.invitesParTranche || 10)) * (o.kgParTranche || 2) + ' kg';
+    if (o.type === 'litres') return (syrupOverride === null ? Math.ceil(guests * o.litresParInvite) : syrupOverride) + ' L';
+    return '';
+  }
+  function setMode(next) {
+    mode = next;
+    $('packs-section').hidden = mode !== 'formule';
+    $('options-section').hidden = mode !== 'carte';
+    $('pack-summary').hidden = mode !== 'formule' || !selectedPack;
+    $('mode-formule').classList.toggle('ghost', mode !== 'formule');
+    $('mode-carte').classList.toggle('ghost', mode !== 'carte');
+    $('mode-formule').setAttribute('aria-pressed', String(mode === 'formule'));
+    $('mode-carte').setAttribute('aria-pressed', String(mode === 'carte'));
+  }
+  function renderPacks() {
+    var guests = Math.max(1, Math.round(num('f-guests', 1)));
+    $('packs').innerHTML = S.packs.map(function (pack) {
+      var sum = pack.options.reduce(function (a, id) {
+        var o = S.options.find(function (x) { return x.id === id; });
+        return a + (o ? optionCost(o, guests) : 0);
+      }, 0);
+      var selectedClass = selectedPack === pack.id ? ' style="border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)"' : '';
+      return '<article class="recipe"' + selectedClass + '><div class="tag">Formule prête à l\u2019emploi</div><h3>' + esc(pack.nom) + '</h3><p class="hint">' + esc(pack.description) + '</p><p class="hint">Options incluses : ' + pack.options.map(function (id) { var o = S.options.find(function (x) { return x.id === id; }); return o ? esc(o.label) : ''; }).join(', ') + '</p><p><strong>' + eur2.format(sum) + '</strong> <span class="hint">pour les options (' + guests + ' invités)</span></p><button type="button" class="btn pack-select" data-pack="' + esc(pack.id) + '">Choisir cette formule</button></article>';
+    }).join('');
+    Array.prototype.forEach.call($('packs').querySelectorAll('[data-pack]'), function (b) {
+      b.onclick = function () { applyPack(b.getAttribute('data-pack')); };
+    });
+  }
+  function renderOptions() {
+    $('sim-options').innerHTML = S.options.map(function (o) {
+      var img = o.image ? '<img class="opt-img" src="' + esc(o.image) + '" alt="' + esc(o.label) + '" loading="lazy">' : '';
+      var quantity = o.type === 'litres' ? '<input type="number" min="1" step="1" class="option-qty" data-qty="' + esc(o.id) + '" value="' + (syrupOverride === null ? Math.ceil(Math.max(1, num('f-guests', 1)) * o.litresParInvite) : syrupOverride) + '" aria-label="Quantité de sirop en litres">' : '';
+      return '<div class="opt"><input type="checkbox" data-o="' + esc(o.id) + '"><span>' + img + '</span><span class="opt-txt"><span class="t">' + esc(o.label) + '</span><br><span class="d">' + esc(o.desc || '') + '</span></span><span class="p">' + priceLabel(o) + '</span>' + quantity + '</div>';
+    }).join('');
+    Array.prototype.forEach.call($('sim-options').querySelectorAll('input[data-o]'), function (c) {
+      c.checked = !!checked[c.getAttribute('data-o')];
+      c.onchange = function () { checked[c.getAttribute('data-o')] = c.checked; calc(); };
+    });
+    var qty = $('sim-options').querySelector('[data-qty="sirop"]');
+    if (qty) qty.oninput = function () { syrupOverride = Math.max(1, Math.round(parseFloat(qty.value) || 1)); calc(); };
+  }
+  function renderWorkshops() {
+    var list = Array.isArray(S.ateliers) ? S.ateliers : [];
+    $('workshops-intro').textContent = S.ateliers_intro || 'Sélectionnez un atelier. Le tarif peut comprendre un forfait et un prix par participant.';
+    $('sim-workshops').innerHTML = list.map(function (atelier) {
+      var prixPersonne = Number(atelier.prixPersonne) || 0;
+      var prixAffiche = eur.format(Number(atelier.prixForfait) || 0) + (prixPersonne > 0 ? ' + ' + eur.format(prixPersonne) + '/pers.' : ' forfait global');
+      return '<label class="opt"><input type="checkbox" data-atelier="' + esc(atelier.id) + '"' + (checkedWorkshops[atelier.id] ? ' checked' : '') + '><span class="opt-txt"><span class="t">' + esc(atelier.nom) + '</span></span><span class="p">' + prixAffiche + '</span></label>';
+    }).join('');
+    Array.prototype.forEach.call($('sim-workshops').querySelectorAll('input[data-atelier]'), function (c) {
+      c.onchange = function () { checkedWorkshops[c.getAttribute('data-atelier')] = c.checked; calc(); };
+    });
+  }
+  function renderPackSummary() {
+    var pack = S.packs.find(function (p) { return p.id === selectedPack; });
+    var guests = Math.max(1, Math.round(num('f-guests', 1)));
+    if (!pack) { $('pack-summary').hidden = true; $('pack-summary').innerHTML = ''; return; }
+    var rows = pack.options.map(function (id) {
+      var o = S.options.find(function (x) { return x.id === id; });
+      return o ? '<li>' + esc(o.label) + ' — ' + eur.format(optionCost(o, guests)) + '</li>' : '';
+    }).join('');
+    var sum = pack.options.reduce(function (a, id) {
+      var o = S.options.find(function (x) { return x.id === id; });
+      return a + (o ? optionCost(o, guests) : 0);
+    }, 0);
+    $('pack-summary').innerHTML = '<h3>Contenu de la formule ' + esc(pack.nom) + '</h3><ul>' + rows + '</ul><p><strong>Total de la formule : ' + eur.format(sum) + '</strong> <span class="hint">(' + guests + ' invités)</span></p>';
+    $('pack-summary').hidden = mode !== 'formule';
+  }
+  function applyPack(id) {
+    var pack = S.packs.find(function (p) { return p.id === id; });
+    if (!pack) return;
+    checked = {};
+    pack.options.forEach(function (oid) { checked[oid] = true; });
+    selectedPack = pack.id;
+    syrupOverride = null;
+    setMode('formule');
+    renderPacks(); renderPackSummary(); calc();
+  }
+  $('mode-formule').onclick = function () { if (!selectedPack) checked = {}; setMode('formule'); renderPacks(); renderPackSummary(); calc(); };
+  $('mode-carte').onclick = function () { selectedPack = null; setMode('carte'); renderOptions(); renderWorkshops(); calc(); };
+
+  /* ---------- Estimation ---------- */
+function calc() {
+    var guests = Math.max(1, Math.round(num('f-guests', 1)));
+    var asked = num('f-hours', T.heuresMinimum);
+    var hours = Math.max(T.heuresMinimum, asked);
+    var km = Math.max(0, num('f-km', 0));
+    var lines = [], total = 0;
+
+    var base = hours * T.prixHeure;
+    lines.push(['Service au bar, ' + hours.toLocaleString('fr-FR') + ' h' + (asked < T.heuresMinimum ? ' (durée minimale)' : ''), base]); total += base;
+
+    if (guests > T.invitesAvantSeconde) {
+      var st = hours * T.prixHeureSeconde;
+      lines.push(['Seconde personne au bar (plus de ' + T.invitesAvantSeconde + ' invités)', st]); total += st;
+    }
+
+    var hSetup = T.heuresMiseEnPlace || 0;
+    if (hSetup > 0) {
+      var setup = hSetup * (T.prixMiseEnPlace || T.prixHeure);
+      lines.push(['Mise en place et désinstallation, ' + hSetup.toLocaleString('fr-FR') + ' h', setup]); total += setup;
+      if (guests > T.invitesAvantSeconde) {
+        var setup2 = hSetup * T.prixHeureSeconde;
+        lines.push(['Seconde personne, mise en place et désinstallation, ' + hSetup.toLocaleString('fr-FR') + ' h', setup2]); total += setup2;
+      }
+    }
+
+    S.options.forEach(function (o) {
+      if (!checked[o.id]) return;
+      var v = optionCost(o, guests), q = optionQuantity(o, guests), lbl = o.label;
+      if (o.type === 'invite') lbl += ' (' + guests + ' invités)';
+      if (q) lbl += ' (' + q + ')';
+      lines.push([lbl, v]); total += v;
+    });
+    (S.ateliers || []).forEach(function (atelier) {
+      if (!checkedWorkshops[atelier.id]) return;
+      var forfait = Number(atelier.prixForfait) || 0;
+      var prixPersonne = Number(atelier.prixPersonne) || 0;
+      var prixAtelier = forfait + prixPersonne * guests;
+      var labelAtelier = prixPersonne > 0
+        ? 'Atelier — ' + atelier.nom + ' (forfait + ' + eur.format(prixPersonne) + '/pers.)'
+        : 'Atelier — ' + atelier.nom + ' (forfait global)';
+      lines.push([labelAtelier, prixAtelier]);
+      total += prixAtelier;
+    });
+  
+    var extra = Math.max(0, km - T.kmInclus);
+    if (extra > 0) { var tr = extra * 2 * T.prixKm; lines.push(['Déplacement (au-delà de ' + T.kmInclus + ' km, aller-retour)', tr]); total += tr; }
+
+    if ($('packs')) renderPacks();
+    if ($('pack-summary')) renderPackSummary();
+    var autoQty = $('sim-options').querySelector('[data-qty="sirop"]');
+    if (autoQty && syrupOverride === null) autoQty.value = Math.ceil(guests / 30);
+    var warn = (selected && isBlocked(selected)) ? '<div class="warn">Cette date est déjà réservée. Choisissez-en une autre dans le calendrier.</div>' : '';
+    $('sim-result').innerHTML = warn +
+      '<table class="lines">' + lines.map(function (l) { return '<tr><td>' + esc(l[0]) + '</td><td>' + eur.format(l[1]) + '</td></tr>'; }).join('') + '</table>' +
+      '<div class="total"><span>Estimation</span><span>' + eur.format(total) + '</span></div>' +
+      '<p class="hint">Estimation indicative, hors boissons et alcools. Le devis définitif dépend de vos envies et du lieu.</p>';
+
+        var opts = S.options.filter(function (o) { return checked[o.id]; }).map(function (o) { return o.label; });
+    var selectedAteliers = (S.ateliers || []).filter(function (a) { return checkedWorkshops[a.id]; }).map(function (a) { return a.nom; });
+    var text = 'Bonjour, je souhaite un devis pour un événement.\n' +
+      'Type : ' + $('f-type').value + '\n' +
+      'Date : ' + (selected ? frDate(selected) : 'à définir') + '\n' +
+      'Invités : ' + guests + '\n' +
+      'Durée du service : ' + hours.toLocaleString('fr-FR') + ' h\n' +
+      'Distance : ' + km + ' km\n' +
+      'Options : ' + (opts.length ? opts.join(', ') : 'aucune pour le moment') + '\n' +
+      'Ateliers : ' + (selectedAteliers.length ? selectedAteliers.join(', ') : 'aucun') + '\n' +
+      'Estimation affichée sur le site : ' + eur.format(total) + '\n' +
+      'Pouvons-nous en discuter ?';
+    $('recap').value = text;
+
+    var wa = $('wa-devis');
+    if (wa && S.contact.telephone) {
+      wa.href = 'https://wa.me/' + S.contact.telephone.replace(/[^0-9]/g, '') + '?text=' + encodeURIComponent(text);
+    }
+  }
+    /* ---------- Contact ---------- */
+  var c = S.contact, out = [];
+  var ICON = {
+    wa: '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 3.2 17.3L2 22l4.8-1.2A11 11 0 1 0 20.5 3.5zM12 20a9 9 0 0 1-4.6-1.3l-.3-.2-2.8.7.8-2.7-.2-.3A9 9 0 1 1 12 20zm5-6.7c-.3-.1-1.6-.8-1.9-.9s-.5-.1-.7.1-.8.9-.9 1.1-.3.2-.6.1a7.400 7.400 0 0 1-3.700-3.200c-.3-.5.3-.5.8-1.500.1-.2 0-.4 0-.5l-.9-2.100c-.2-.5-.5-.5-.7-.5h-.6a1.200 1.200 0 0 0-.9.4 3.700 3.700 0 0 0-1.100 2.700 6.400 6.400 0 0 0 1.300 3.400 14.600 14.600 0 0 0 5.600 5c2.100.9 2.900.9 3.400.8a3 3 0 0 0 2-1.400 2.500 2.500 0 0 0 .2-1.400c-.1-.1-.3-.2-.6-.3z"/></svg>',
+    mail: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
+    ig: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.500" cy="6.500" r="1" fill="currentColor" stroke="none"/></svg>',
+    tel: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>'
+  };
+  function ico(href, svg, label, ext) {
+    return '<a class="ico" href="' + href + '"' + (ext ? ' target="_blank" rel="noopener"' : '') + ' aria-label="' + esc(label) + '" title="' + esc(label) + '">' + svg + '</a>';
+  }
+  if (c.telephone) {
+    var tel = c.telephone.replace(/[^0-9+]/g, '');
+    out.push(ico('https://wa.me/' + tel.replace('+', ''), ICON.wa, 'WhatsApp', true));
+    out.push(ico('tel:' + tel, ICON.tel, 'Appeler'));
+  }
+  if (c.email) out.push(ico('mailto:' + esc(c.email), ICON.mail, 'E-mail'));
+  if (c.instagram) {
+    var h = c.instagram.replace(/^@/, '').replace(/[^A-Za-z0-9._]/g, '');
+    out.push(ico('https://www.instagram.com/' + h + '/', ICON.ig, 'Instagram', true));
+  }
+  $('contact-box').innerHTML = '<div class="icos">' + out.join('') + '</div>';
+
+var cm = $('copy-mail');
+if (cm) cm.onclick = function () {
+  try { navigator.clipboard.writeText(c.email).then(function () { cm.textContent = 'Adresse copiée'; }); }
+  catch (e) { cm.textContent = c.email; }
+};
+
+$('copy').onclick = function () {
+  var ta = $('recap'), st = $('copy-status');
+  function fallback() { ta.focus(); ta.select(); st.textContent = 'Texte sélectionné, copiez-le avec votre clavier.'; }
+  try { navigator.clipboard.writeText(ta.value).then(function () { st.textContent = 'Récapitulatif copié.'; }, fallback); } catch (e) { fallback(); }
+};
+['f-type', 'f-guests', 'f-hours', 'f-km'].forEach(function (id) { $(id).addEventListener('input', calc); $(id).addEventListener('change', calc); });
+
+renderCal(); renderOptions(); renderWorkshops(); renderPacks(); setMode('formule'); calc();
+})();
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"8607d2a720d14b038279025b2b5a82e5","spa":2}' crossorigin="anonymous"></script>
+<footer style="text-align:center; padding:24px 18px; font-size:.85rem;">
+  <a href="mentions-legales.html">Mentions légales</a>
+</footer>
+</body>
+</html>
